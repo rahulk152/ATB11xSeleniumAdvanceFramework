@@ -40,4 +40,16 @@ public class LoginPage {
         String error_message_text = getDriver().findElement(error_message).getText();
         return error_message_text;
     }
+    // Step 2 - Page Actions
+    public void loginToVWOLoginValidCreds(String user, String pwd) {
+
+        driver.get(PropertiesReader.readKey("url"));
+        driver.findElement(username).sendKeys(user);
+        driver.findElement(password).sendKeys(pwd);
+        driver.findElement(signButton).click();
+
+        // Wait - Thread sleep
+        WaitHelpers.waitJVM(5000);
+
+    }
 }

@@ -11,6 +11,7 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
+import static com.seleniumautomation.driver.DriverManager.getDriver;
 
 
 public class WaitHelpers {
@@ -58,7 +59,7 @@ public class WaitHelpers {
         return error_message;
     }
 
-/*    public static WebElement presenceOfElement(By elementLocation) {
+    public static WebElement presenceOfElement(By elementLocation) {
         return new WebDriverWait(getDriver(), Duration.ofSeconds(20)).until(ExpectedConditions.presenceOfElementLocated(elementLocation));
     }
 
@@ -75,6 +76,7 @@ public class WaitHelpers {
 
     public WebElement getElement(By key) {
         return getDriver().findElement(key);
-    }*/
+    }
+
 
 }
