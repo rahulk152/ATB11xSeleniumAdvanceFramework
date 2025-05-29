@@ -29,7 +29,7 @@ public class DriverManager {
             case "edge" :
                 EdgeOptions edgeOptions = new EdgeOptions();
                 edgeOptions.addArguments("--start-maximized");
-                edgeOptions.addArguments("--guest");
+                //edgeOptions.addArguments("--guest");
                 driver = new EdgeDriver(edgeOptions);
                 break;
             case "chrome":
