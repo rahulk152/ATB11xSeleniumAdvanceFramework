@@ -8,7 +8,9 @@ public class CommonToAllTest {
 
     @BeforeMethod
     public void setUp(){
+
         DriverManager.init();
+
     }
 
     @AfterMethod

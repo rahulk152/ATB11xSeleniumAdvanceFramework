@@ -27,10 +27,10 @@ public class LoginPage {
 
     // Step 2 - Page Actions
     public String loginToVWOLoginInvalidCreds(String user, String pwd) {
-        getDriver().get(PropertiesReader.readKey("url"));
-        getDriver().findElement(username).sendKeys(user);
-        getDriver().findElement(password).sendKeys(pwd);
-        getDriver().findElement(signButton).click();
+        driver.get(PropertiesReader.readKey("url"));
+        driver.findElement(username).sendKeys(user);
+        driver.findElement(password).sendKeys(pwd);
+        driver.findElement(signButton).click();
 
         // Wait - Thread sleep
 //        WaitHelpers.waitJVM(5000);

@@ -1,5 +1,6 @@
 package com.seleniumautomation.tests.pageObjectModelTests.vwo;
 
+import com.seleniumautomation.base.CommonToAllTest;
 import com.seleniumautomation.driver.DriverManager;
 import com.seleniumautomation.pages.pageObjectModel.improved_POM.DashBoardPage;
 import com.seleniumautomation.pages.pageObjectModel.normal_POM.LoginPage;
@@ -9,10 +10,9 @@ import io.qameta.allure.Owner;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static com.seleniumautomation.driver.DriverManager.driver;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class TestVWOLogin_02_PropertyReader_DriverManager_POM_CommonToAll {
+public class TestVWOLogin_02_PropertyReader_DriverManager_POM_CommonToAll extends CommonToAllTest {
 
     @Description("TC#1- Verify that with invalid email, pass, error message is shown on the app.vwo.com")
     @Test
@@ -35,7 +35,7 @@ public class TestVWOLogin_02_PropertyReader_DriverManager_POM_CommonToAll {
         LoginPage loginPage_VWO = new LoginPage(DriverManager.getDriver());
         loginPage_VWO.loginToVWOLoginValidCreds(PropertiesReader.readKey("username"),PropertiesReader.readKey("password"));
 
-        DashBoardPage dashBoardPage  = new DashBoardPage(driver);
+        DashBoardPage dashBoardPage  = new DashBoardPage(DriverManager.getDriver());
         String usernameLoggedIn = dashBoardPage.loggedInUserName();
 
         assertThat(usernameLoggedIn).isNotBlank().isNotNull().isNotEmpty();

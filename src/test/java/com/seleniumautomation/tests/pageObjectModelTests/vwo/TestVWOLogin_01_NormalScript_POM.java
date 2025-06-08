@@ -7,7 +7,6 @@ import io.qameta.allure.Description;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-import static com.seleniumautomation.driver.DriverManager.driver;
 import static com.seleniumautomation.driver.DriverManager.getDriver;
 import static org.assertj.core.api.Assertions.*;
 import org.testng.Assert;
@@ -20,7 +19,7 @@ public class TestVWOLogin_01_NormalScript_POM extends CommonToAllTest {
 
         // Driver Manager Code - 1
         // Page Class Code (POM Code) - 2
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(DriverManager.getDriver());
         String error_msg = loginPage.loginToVWOLoginInvalidCreds(PropertiesReader.readKey("invalid_username"), PropertiesReader.readKey("invalid_password"));
 
         // Assertions - 3
